@@ -1,0 +1,17 @@
+﻿@model Book
+
+<div class="container py-5" style="max-width: 600px">
+
+    <h2>Delete</h2>
+    <div class="alert alert-warning mt-4"> 
+        Are you sure want to delete <strong style="color: black"> @Model.Title </strong> by <strong style="color: black"> @Model.Author</strong> ?
+    </div>
+
+    <form asp-action="DeleteConfirmed" method="post">
+
+        <input type="hidden" asp-for="@Model.Id"/>
+
+        <button class="btn btn-danger"> Delete </button>
+        <a asp-action="Index" class="btn btn-secondary ms-3" >Cancel </a>
+    </form>
+</div>

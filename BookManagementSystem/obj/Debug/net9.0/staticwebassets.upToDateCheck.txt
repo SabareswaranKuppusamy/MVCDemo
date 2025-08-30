@@ -1,0 +1,125 @@
+wwwroot\css\site.css
+wwwroot\favicon.ico
+wwwroot\js\site.js
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\lib\jquery-validation\dist\additional-methods.js
+wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\lib\jquery-validation\LICENSE.md
+wwwroot\lib\jquery\dist\jquery.js
+wwwroot\lib\jquery\dist\jquery.min.js
+wwwroot\lib\jquery\dist\jquery.min.map
+wwwroot\lib\jquery\dist\jquery.slim.js
+wwwroot\lib\jquery\dist\jquery.slim.min.js
+wwwroot\lib\jquery\dist\jquery.slim.min.map
+wwwroot\lib\jquery\LICENSE.txt
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\css\site.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\favicon.ico
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\js\site.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery-validation\dist\additional-methods.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery-validation\LICENSE.md
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery\dist\jquery.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery\dist\jquery.min.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery\dist\jquery.min.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery\dist\jquery.slim.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery\dist\jquery.slim.min.js
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery\dist\jquery.slim.min.map
+F:\Sabares\Book Management System\BookManagementSystem\BookManagementSystem\wwwroot\lib\jquery\LICENSE.txt
