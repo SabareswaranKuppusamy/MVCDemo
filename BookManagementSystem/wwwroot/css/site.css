@@ -29,3 +29,28 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+.custom-btn {
+    background-color: #343a40;
+    border: none;
+    transition: background-color 0.3s;
+}
+.custom-btn:hover {
+    background-color: #495057; 
+}
+
+.custom-btn:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.no-outline:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.custom-pagination .page-item.active .page-link {
+    background-color: #343a40; 
+    color: white;
+    border: none;
+}

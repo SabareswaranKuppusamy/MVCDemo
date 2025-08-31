@@ -3,9 +3,9 @@
 
 <div class="container p-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Books Store</h2>
-        <a asp-action="Create" class="btn btn-primary">
-            <i class="bi bi-plus-lg"></i> Add Book
+        <h2>BOOK STORE</h2>
+        <a asp-action="Create" class="btn btn-dark text-light custom-btn">
+            <i class="bi bi-plus-lg"></i> Add New Book
         </a>
     </div>
 
@@ -67,7 +67,7 @@
 
     <div class="table-responsive">
         <table class="table table-striped table-bordered align-middle">
-            <thead class="table-light">
+            <thead class="table-dark ">
                 <tr>
                     <th>Title</th>
                     <th>Author</th>
@@ -77,29 +77,46 @@
                 </tr>
             </thead>
             <tbody id="bookTable">
-                @foreach(var book in Model)
+                @if (Model != null && Model.Count > 0)
                 {
-                    <tr>
-                        <td data-field="title">@book.Title</td>
-                        <td data-field="author">@book.Author</td>   
-                        <td class="text-end">@book.Price.ToString("0.00")</td>
-                        <td data-field="description">@book.Description</td>
-                        <td>
-                            <a asp-action="Edit" class="btn btn-sm btn-warning" asp-route-id="@book.Id">
-                                <i class="bi bi-pencil"></i> 
-                            </a>
-                            <a href="javascript:void(0)"
-                               class="btn btn-sm btn-danger ms-2"
-                               data-bs-toggle="modal"
-                               data-bs-target="#deleteModal"
-                               data-id="@book.Id"
-                               data-title="@book.Title"
-                               data-author="@book.Author"
-                            >
-                               <i class="bi bi-trash"></i> 
-                            </a>
-                        </td>
+                    @foreach (var book in Model)
+                    {
+                        <tr>
+                            <td data-field="title">@book.Title</td>
+                            <td data-field="author">@book.Author</td>
+                            <td class="text-end">@book.Price.ToString("0.00")</td>
+                            <td data-field="description">@book.Description</td>
+                            <td>
+                                <a asp-action="Edit" class="btn btn-sm btn-warning" asp-route-id="@book.Id">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
 
+                                <a asp-action="Details"
+                                   asp-route-id="@book.Id"
+                                   class="btn btn-info btn-sm ms-2">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+
+                                <a href="javascript:void(0)"
+                                   class="btn btn-sm btn-danger ms-2"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#deleteModal"
+                                   data-id="@book.Id"
+                                   data-title="@book.Title"
+                                   data-author="@book.Author">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr class="no-results">
+                        <td colspan="5" class="text-center py-4">
+                            No data available
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -108,25 +125,7 @@
 
     @* Pagination *@
     <nav class="d-flex justify-content-end">
-        <ul class="pagination">
-            @if (ViewBag.CurrentPage > 1)
-            {
-                <li class="page-item">
-                    <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1, searchTerm = ViewBag.SearchTerm })">&laquo; </a>
-                </li>
-            }
-            @for (int i = 1; i <= ViewBag.TotalPages; i++)
-            {
-                <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
-                    <a class="page-link" href="@Url.Action("Index", new { page = i, searchTerm = ViewBag.SearchTerm })">@i</a>
-                </li>
-            }
-            @if (ViewBag.CurrentPage < ViewBag.TotalPages)
-            {
-                <li class="page-item">
-                    <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1, searchTerm = ViewBag.SearchTerm })">&raquo;</a>
-                </li>
-            }
+        <ul class="pagination custom-pagination" id="pagination">
         </ul>
     </nav>
 
@@ -137,21 +136,160 @@
 {    
     <script>
 
+         // pagination
+
+        const rowsPerPage = 5;
+        let currentPage = 1;
+        let filteredRows = [];
+
+        function applyFilter()
+        {
+
+            // console.log(`apply fiter--->  `);
+            debugger;
+
+            const query = $("#searchBox").val().toLowerCase().trim();
+            const $allRows = $("#bookTable tr");
+
+            filteredRows = $allRows.filter( function()
+            {
+                const title = $(this).find("td[data-field = 'title']").text().toLowerCase();
+
+                const author = $(this).find("td[data-field = 'author']").text().toLowerCase();
+
+                return title.indexOf(query) > 1 || author.indexOf(query) > -1;
+            });
+
+
+            $("#bookTable tr.no-results").remove();
+
+            if (filteredRows.length === 0) 
+            {
+                $allRows.hide();
+
+                $("#bookTable").append('<tr class="no-results"><td colspan="5" class="text-center py-4">No results found</td></tr>');
+
+                $("#pagination").empty();
+
+                return false;
+            }
+
+            return true;
+        }
+
+        function applyPagination()
+        {
+            if(filteredRows.length === 0) 
+            {
+                return;
+            }
+
+            const totalPages = Math.ceil(filteredRows.length / rowsPerPage);
+
+            if(currentPage < 1)
+            {
+                currentPage = 1;
+            }
+
+            if (currentPage > totalPages)
+            {
+                currentPage = totalPages;
+            }
+
+            $("#bookTable tr").hide();
+
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+
+            filteredRows.slice(start, end).show();
+
+            const $pagination = $("#pagination").empty();
+
+            if(currentPage > 1 )
+            {
+                $pagination.append(`
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:void(0)" data-page="${currentPage - 1}">
+                                &laquo;
+                            </a>
+                        </li>
+                    `)
+            }
+            else 
+            {
+                $pagination.append(`
+                        <li class="page-item disabled"> 
+                            <span class="page-link"> &laquo; 
+                            </span>
+                        </li>
+                    `);
+            }
+
+            $pagination.append(`
+                <li class="page-item active">
+                    <span class="page-link bg-dark text-white no-outline">
+                        Page ${currentPage} of ${totalPages}
+                    </span>
+                </li>
+            `);
+            
+
+
+            if(currentPage < totalPages )
+            {
+                $pagination.append(`
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:void(0)" data-page="${ currentPage + 1}">
+                                &raquo;
+                            </a>
+                        </li>
+                    `)
+            }
+            else 
+            {
+                $pagination.append(`
+                        <li class="page-item disabled">
+                            <span class="page-link"> &raquo;
+                            </span>
+                        </li>
+                    `);
+            }
+
+
+
+        }
+
+        function changePage(page) 
+        {
+            console.log("pagination action  ");
+            currentPage = page;
+            applyPagination();
+        }
+
+        $(document).on("click", "#pagination a.page-link", function (e) 
+        {
+            console.log("pagination button click   ");
+
+            e.preventDefault();
+
+            const page = parseInt($(this).attr("data-page"));
+
+            if (!isNaN(page)) 
+            {
+                changePage(page);
+            }
+        });
         // filter
 
-         $(document).ready(function () {
-            $("#searchBox").on("keyup", function () 
+        $("#searchBox").on("keyup", function () 
+        {
+             currentPage = 1;
+
+            if (applyFilter()) 
             {
-                // debugger;
+                applyPagination();
+            }
 
-                var value = $(this).val().toLowerCase();
-
-                $("#bookTable tr").filter(function () {
-                    // debugger;
-
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-                });
-            });
         });
 
         // delete 
@@ -176,7 +314,13 @@
         });
 
 
-        // pagination 
+        $(document).ready(function () 
+        {
+            if (applyFilter()) 
+            {
+                applyPagination();
+            }
+        });
 
     </script>
 }

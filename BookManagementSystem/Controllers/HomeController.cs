@@ -15,34 +15,17 @@ namespace BookManagementSystem.Controllers
             _bookService = bookstore;
         }
 
-        public IActionResult Index(int page = 1, string searchTerm = "")
+        public IActionResult Index()
         {
-            const int pageSize = 5;
 
             var books = _bookService.GetAll() ?? new List<Book>();
 
             if(books is null)
             {
                 return View(new List<Book>());
-            }
+            } 
 
-            if(!string.IsNullOrWhiteSpace(searchTerm))
-            {
-                books = books.Where(b => b.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) || 
-                                         b.Author.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
-                             .ToList();
-            }
-
-
-            var pagedBooks = books.Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToList();
-
-            ViewBag.TotalPages = (int)Math.Ceiling(books.Count / (double)pageSize);
-            ViewBag.CurrentPage = page;
-            ViewBag.SearchTerm = searchTerm;
-
-            return View(pagedBooks);
+            return View(books);
         }
 
         [HttpGet]
@@ -55,16 +38,25 @@ namespace BookManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Book book)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                TempData["ErrorMessage"] = "Failed to create book. Please check the form.";
-                return View(book);
+                if (!ModelState.IsValid)
+                {
+                    TempData["ErrorMessage"] = "Failed to create book. Please check the form.";
+                    return View(book);
+                }
+
+                _bookService.Add(book);
+
+                TempData["SuccessMessage"] = "Book created successfully!";
+                return RedirectToAction(nameof(Index));
             }
-
-            _bookService.Add(book);
-
-            TempData["SuccessMessage"] = "Book created successfully!";
-            return Redirect(nameof(Index));
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error create book details");
+                TempData["ErrorMessage"] = "An error occurred while creating the book.";
+                return RedirectToAction(nameof(Index));
+            }
         }
 
         [HttpGet]
@@ -80,16 +72,27 @@ namespace BookManagementSystem.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Book book)
-        { 
-            if (!ModelState.IsValid)
+        {
+            try
             {
-                TempData["ErrorMessage"] = "Failed to Update book. Please check the form.";
-                return View(book);
-            }
+                if (!ModelState.IsValid)
+                {
+                    TempData["ErrorMessage"] = "Failed to Update book. Please check the form.";
+                    return View(book);
+                }
 
-            _bookService.Update(book);
-            TempData["SuccessMessage"] = "Book updated successfully!";
-            return RedirectToAction(nameof(Index));
+                _bookService.Update(book);
+
+                TempData["SuccessMessage"] = "Book updated successfully!";
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error edit book details");
+                TempData["ErrorMessage"] = "An error occurred while editing the book.";
+                return RedirectToAction(nameof(Index));
+            } 
         }
 
         [HttpGet]
@@ -106,19 +109,56 @@ namespace BookManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            var book = _bookService.GetById(id);
-
-            if (book != null)
+            try
             {
-                _bookService.Delete(id);
-                TempData["SuccessMessage"] = "Book deleted successfully.";
-            }
-            else
-            {
-                TempData["ErrorMessage"] = "Book not found.";
-            }
+                var book = _bookService.GetById(id);
 
-            return RedirectToAction(nameof(Index));
+                if (book != null)
+                {
+                    _bookService.Delete(id);
+                    TempData["SuccessMessage"] = "Book deleted successfully.";
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Book not found.";
+                }
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while deleting the book"); 
+                TempData["ErrorMessage"] = "An error occurred while deleting the book.";
+                return RedirectToAction(nameof(Index));
+            } 
+        }
+
+
+        public IActionResult Details(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                TempData["ErrorMessage"] = "Book ID was not provided.";
+                return View("NotFound");
+            }
+            try
+            {
+                var book = _bookService.GetById(id.Value);
+
+                if (book == null)
+                {
+                    TempData["ErrorMessage"] = $"No book found with ID {id}.";
+                    return View("NotFound");
+                }
+
+                return View(book);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while loading the book details");
+                TempData["ErrorMessage"] = "An error occurred while loading the book details.";
+                return View("Error");
+            }
         }
     }
 }
